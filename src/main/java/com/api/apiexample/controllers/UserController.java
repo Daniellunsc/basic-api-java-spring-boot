@@ -2,6 +2,7 @@ package com.api.apiexample.controllers;
 
 import com.api.apiexample.domain.User;
 import com.api.apiexample.dto.UserCreationRequest;
+import com.api.apiexample.interfaces.IUserService;
 import com.api.apiexample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @GetMapping("/users")
     public List<User> listAll() {
